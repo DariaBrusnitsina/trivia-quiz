@@ -60,7 +60,7 @@ function GameOptionsForm() {
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
-  const handleSliderChange = (event: Event, newValue: number | number[]) => {
+  const handleSliderChange = (_event: Event, newValue: number | number[]) => {
     setFormData({ ...formData, numberOfQuestions: newValue as number });
   };
 
