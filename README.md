@@ -1,27 +1,25 @@
-# React + TypeScript + Vite
+## Описание
+Приложение "Trivia" - это квиз-игра, в которой вы можете проверить свои знания, отвечая на вопросы из различных категорий и уровней сложности. Игра использует открытый источник вопросов с богатой базой данных, предоставляемой API Open Trivia Database.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Функциональность
+### Настройки игры:
+Выбор количества вопросов: пользователь может выбрать количество вопросов для игры, от 1 до максимального значения, предоставляемого API (50 вопросов).
+Уровень сложности: пользователь может выбрать уровень сложности вопросов, включая 'easy', 'medium' и 'hard'.
+Категории: пользователь может выбрать конкретные категории вопросов или оставить выбор по умолчанию для игры по всем категориям.
 
-Currently, two official plugins are available:
+### Игровой процесс:
+Вопросы отображаются по одному на экране, начиная с первого. Пользователь обязан ответить на текущий вопрос, прежде чем перейти к следующему. Каждый вопрос отображает информацию о сложности, категории, текст вопроса и варианты ответа. После ответа на вопрос появляется следующая карточка с новым вопросом.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Результаты игры:
+По завершении игры отображается обзор результатов. Пользователь видит, сколько вопросов из общего количества было отвечено правильно.
+Количество правильных ответов сгруппировано по уровню сложности и отображаются в следующем порядке: 'hard', 'medium', 'easy'. Если в счётчике правильных ответов не было вопросов определенной категории сложности, она не отображается. Далее предоставляется список вопросов, помеченных как правильно или неправильно отвеченные, предоставляется верный ответ на вопрос.
 
-## Expanding the ESLint configuration
+## Как выглядит приложение
+### Настройки игры:
+<img width="941" alt="Screenshot 2023-09-21 at 15 35 36" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/7fbcf5ce-ebf5-4918-a79a-1bc2d68ec754">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Игровой процесс:
+<img width="836" alt="Screenshot 2023-09-21 at 15 35 49" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/ee392c69-bada-4d11-9a6a-11f773f07018">
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Результаты игры:
+<img width="932" alt="Screenshot 2023-09-21 at 15 36 17" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/f299ecc6-2290-4842-a9e5-69fbd95c7c9d">

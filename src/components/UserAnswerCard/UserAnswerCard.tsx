@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { useStyles } from './styles';
-import { Answer } from '../../hooks/useGameState';
 import decodeHTML from '../../utils/decodeHTML';
+import { Answer } from '../../types';
 
 interface Props {
   answer: Answer;

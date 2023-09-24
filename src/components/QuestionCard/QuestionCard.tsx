@@ -1,8 +1,8 @@
 import { Card, CardContent, Typography, FormControl, RadioGroup, FormControlLabel, Radio, Box, Button } from '@mui/material';
-import { useGameStatus } from '../../hooks/useGameState';
 import { useStyles } from './styles';
 import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
-import { Question } from '~/types';
+import { Question } from '../../types';
+import { useGameStatus } from '../../hooks/useGameState';
 import decodeHTML from '../../utils/decodeHTML';
 
 interface Props {

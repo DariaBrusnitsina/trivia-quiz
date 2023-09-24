@@ -1,14 +1,22 @@
 import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../store/store';
-import { Answer, useGameStatus } from '../../hooks/useGameState';
+
 import { Box, Button, Card, CircularProgress, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useStyles } from './styles';
 import UserAnswerCard from '../UserAnswerCard/UserAnswerCard';
-import { Question } from '../../types';
+import { Answer, Question } from '../../types';
 import QuestionCard from '../QuestionCard/QuestionCard';
+import { RootState, useAppDispatch } from '../../store/store';
+import { useGameStatus } from '../../hooks/useGameState';
 import { resetState } from '../../store/questonReducer';
 import GameOptionsForm from '../Form/GameOptionsForm';
+
+function compareDifficulties(a: string, b: string) {
+  const order = ['hard', 'medium', 'easy'];
+  const index1 = order.indexOf(a);
+  const index2 = order.indexOf(b);
+  return index1 - index2;
+}
 
 const TriviaGameContainer = () => {
   const { queston, loading, error } = useSelector((state: RootState) => state.question);
@@ -27,13 +35,6 @@ const TriviaGameContainer = () => {
         return d.difficulty;
       })
     );
-
-    function compareDifficulties(a: string, b: string) {
-      const order = ['hard', 'medium', 'easy'];
-      const index1 = order.indexOf(a);
-      const index2 = order.indexOf(b);
-      return index1 - index2;
-    }
 
     difficulties = Array.from(setOfDifficulties).sort(compareDifficulties);
   }
