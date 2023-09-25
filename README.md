@@ -1,3 +1,6 @@
+## Deploy
+https://dariabrusnitsina.github.io/trivia-quiz/
+
 ## Описание
 Приложение "Trivia" - это квиз-игра, в которой вы можете проверить свои знания, отвечая на вопросы из различных категорий и уровней сложности. Игра использует открытый источник вопросов с богатой базой данных, предоставляемой API Open Trivia Database.
 
@@ -16,10 +19,11 @@
 
 ## Как выглядит приложение
 ### Настройки игры:
-<img width="941" alt="Screenshot 2023-09-21 at 15 35 36" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/7fbcf5ce-ebf5-4918-a79a-1bc2d68ec754">
+<img width="941" alt="Screenshot 2023-09-21 at 15 35 36" src="https://github.com/DariaBrusnitsina/trivia-quiz/assets/108741883/dc5e4374-03c8-4cd9-993e-0d597021f376">
 
 ### Игровой процесс:
-<img width="836" alt="Screenshot 2023-09-21 at 15 35 49" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/ee392c69-bada-4d11-9a6a-11f773f07018">
+<img width="836" alt="Screenshot 2023-09-21 at 15 35 49" src="https://github.com/DariaBrusnitsina/trivia-quiz/assets/108741883/a65e5413-63b9-4c9d-870f-21e078c17f10">
+
 
 ### Результаты игры:
-<img width="932" alt="Screenshot 2023-09-21 at 15 36 17" src="https://github.com/DariaBrusnitsina/Trivia/assets/108741883/f299ecc6-2290-4842-a9e5-69fbd95c7c9d">
+<img width="932" alt="Screenshot 2023-09-21 at 15 36 17" src="https://github.com/DariaBrusnitsina/trivia-quiz/assets/108741883/284f3ed5-0d64-481e-863d-c67d9af65cab">
