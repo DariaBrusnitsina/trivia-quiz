@@ -1,9 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { Dispatch } from 'redux';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { Dispatch } from "redux";
+import { Question } from "../types";
 
 interface questionState {
-  queston: any;
+  queston: Question[] | null;
   loading: boolean;
   error: string | null;
 }
@@ -15,14 +16,14 @@ const initialState: questionState = {
 };
 
 const questonSlice = createSlice({
-  name: 'queston',
+  name: "queston",
   initialState,
   reducers: {
     fetchDataStart: (state) => {
       state.loading = true;
       state.error = null;
     },
-    fetchDataSuccess: (state, action: PayloadAction<any>) => {
+    fetchDataSuccess: (state, action: PayloadAction<Question[]>) => {
       state.queston = action.payload;
       state.loading = false;
       state.error = null;
@@ -37,21 +38,30 @@ const questonSlice = createSlice({
   },
 });
 
-export const { fetchDataStart, fetchDataSuccess, fetchDataFailure, resetState } = questonSlice.actions;
+export const {
+  fetchDataStart,
+  fetchDataSuccess,
+  fetchDataFailure,
+  resetState,
+} = questonSlice.actions;
 export default questonSlice.reducer;
 
-export const fetchQuestionData = (amount: number, category: number, difficulty: string) => {
+export const fetchQuestionData = (
+  amount: number,
+  category: number,
+  difficulty: string
+) => {
   return async (dispatch: Dispatch) => {
     try {
       dispatch(fetchDataStart());
-      const url = `https://opentdb.com/api.php?amount=${amount}${category === 0 ? '&category=' + category : ''}${
-        difficulty !== 'any' ? '&difficulty=' + difficulty : ''
-      }`;
+      const url = `https://opentdb.com/api.php?amount=${amount}${
+        category !== 0 ? "&category=" + category : ""
+      }${difficulty !== "any" ? "&difficulty=" + difficulty : ""}`;
 
       const response = await axios.get(url);
       dispatch(fetchDataSuccess(response.data.results));
     } catch (error) {
-      dispatch(fetchDataFailure('Что-то пошло не так'));
+      dispatch(fetchDataFailure("Что-то пошло не так"));
     }
   };
 };

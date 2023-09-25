@@ -63,15 +63,7 @@ const QuestionCard = ({ question, index }: Props) => {
             {currentIndex + 1} / {questionsLength}
           </Typography>
           <Button
-            // disabled={!value}
-            className={cx(
-              {
-                [classes.disabled]: !value,
-              },
-              {
-                [classes.enabled]: !!value,
-              }
-            )}
+            disabled={!value}
             type="submit"
           >
             Next question

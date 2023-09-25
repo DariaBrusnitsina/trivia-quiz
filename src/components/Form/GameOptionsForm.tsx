@@ -16,8 +16,6 @@ import { useStyles } from './styles';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store/store';
 import { fetchQuestionData } from '../../store/questonReducer';
-
-// Определение типа состояния формы
 interface FormData {
   numberOfQuestions: number;
   difficulty: string;
